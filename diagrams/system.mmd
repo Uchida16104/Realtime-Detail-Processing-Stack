@@ -1,0 +1,13 @@
+flowchart LR
+  U[User] --> F[Vue Frontend]
+  F -->|SSE/REST| R[Rust API]
+  R --> P1[Python3 Analyzer]
+  R --> P2[C Monitor]
+  R --> P3[C++ Verifier]
+  R --> P4[Java Executor]
+  R --> P5[Zig Plugin]
+  R --> P6[Mojo Plugin]
+  R --> L[Logs]
+  R --> N[Network Checks]
+  R --> S[Security Checks]
+  R --> V[File Checks]

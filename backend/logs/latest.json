@@ -1,0 +1,44 @@
+{
+  "mode": "detail-analysis",
+  "python": {
+    "tool": "python3",
+    "status": "ok",
+    "input_length": 54,
+    "unique_characters": 28,
+    "top_characters": [
+      [
+        "\"",
+        8
+      ],
+      [
+        "a",
+        6
+      ],
+      [
+        "e",
+        5
+      ],
+      [
+        "t",
+        5
+      ],
+      [
+        "l",
+        4
+      ]
+    ],
+    "summary": "python analysis complete"
+  },
+  "zig": {
+    "tool": "zig",
+    "fallback": true,
+    "note": "source present, binary not required at runtime",
+    "input_len": 54
+  },
+  "mojo": {
+    "tool": "mojo",
+    "fallback": true,
+    "note": "source present, binary not required at runtime",
+    "input_len": 54
+  }
+}
