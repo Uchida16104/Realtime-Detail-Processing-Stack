@@ -10,6 +10,10 @@ use axum::{
     routing::{get, post},
     Router,
 };
+use axum::response::sse::Sse;
+use axum::response::sse::Event;
+use std::convert::Infallible;
+use futures::Stream;
 use chrono::Utc;
 use models::{AnalyzeRequest, ApiResponse, FileCheckRequest, NetworkCheckRequest, SecurityCheckRequest};
 use serde_json::json;
@@ -79,8 +83,8 @@ async fn health(State(state): State<AppState>) -> impl IntoResponse {
     }))
 }
 
-async fn stream() -> impl IntoResponse {
-    sse::sse_handler()
+async fn stream() -> Sse<impl Stream<Item = Result<Event, Infallible>>> {
+    sse::sse_handler().await
 }
 
 async fn analyze(State(state): State<AppState>, Json(req): Json<AnalyzeRequest>) -> impl IntoResponse {
