@@ -80,7 +80,7 @@ async fn health(State(state): State<AppState>) -> impl IntoResponse {
 }
 
 async fn stream() -> impl IntoResponse {
-    sse::stream()
+    sse::sse_handler()
 }
 
 async fn analyze(State(state): State<AppState>, Json(req): Json<AnalyzeRequest>) -> impl IntoResponse {
